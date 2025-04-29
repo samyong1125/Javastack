@@ -207,10 +207,10 @@ public class DbManager {
 
 		try {
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, cu.getCno());
-			pstmt.setString(2, cu.getName());
-			pstmt.setString(3, cu.getTel());
-			pstmt.setString(4, cu.getAddr());
+//			pstmt.setString(1, cu.getCno());
+//			pstmt.setString(2, cu.getName());
+//			pstmt.setString(3, cu.getTel());
+//			pstmt.setString(4, cu.getAddr());
 			pstmt.executeUpdate();
 			pstmt.close();
 			con.commit();
