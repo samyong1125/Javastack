@@ -2,6 +2,8 @@ package com.JavaStack.main;
 
 import com.JavaStack.DB.DbManager;
 import com.JavaStack.UI.LoginUI;
+import com.JavaStack.service.RecordService;
+
 
 
 public class JavaStackMain {
@@ -22,7 +24,67 @@ public class JavaStackMain {
 				System.out.println("프로그램을 종료합니다.");
 			}
 
+			RecordService recordService = new RecordService();
 
+			int HAHAHA = loginUI.mainMenu(loginUI.scanner);
+
+			while (true) {
+				switch (HAHAHA) {
+					case 1: {
+						switch (HAHAHA) {
+							case 1: {
+
+								//여기다 함수를 넣어주세요
+								break;
+							}
+							case 2: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+							case 3: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+						}
+						break;
+					}
+					case 2: {
+						switch (HAHAHA) {
+							case 1: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+							case 2: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+							case 3: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+						}
+						break;
+					}
+					case 3: {
+						switch (HAHAHA) {
+							case 1: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+							case 2: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+							case 3: {
+								//여기다 함수를 넣어주세요
+								break;
+							}
+						}
+						break;
+					}
+				}
+				break;
+			}
 
 			loginUI.close();
 			db.dbClose();
@@ -32,4 +94,6 @@ public class JavaStackMain {
 			e.printStackTrace();
 		}
 	}
+
 }
+
