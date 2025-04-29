@@ -38,7 +38,7 @@ public class LoginUI {
 
             if (loggedInMember != null) {
                 System.out.println("로그인 성공: " + loggedInMember.getMemberName() + "님 환영합니다!");
-                // 여기에 로그인 성공 후 메인 메뉴로 이동하는 코드 추가
+                //asdf
                 return true;
             } else {
                 System.out.println("로그인 실패: 이메일 또는 비밀번호가 일치하지 않습니다.");

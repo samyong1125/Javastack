@@ -22,6 +22,8 @@ public class JavaStackMain {
 				System.out.println("프로그램을 종료합니다.");
 			}
 
+
+
 			loginUI.close();
 			db.dbClose();
 
