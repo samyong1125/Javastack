@@ -18,27 +18,37 @@ public class LoginUI {
     }
 
 
-    public void showLoginScreen() {
-        System.out.println("===== 가계부 프로그램 로그인 =====");
-        System.out.println("이메일과 비밀번호를 입력하세요.");
+    public boolean showLoginScreen() {
+        int maxAttempts = 3;
+        int attempts = 0;
 
-        System.out.print("이메일: ");
-        String email = scanner.nextLine();
+        while (attempts < maxAttempts) {
+            System.out.println("\n===== 가계부 프로그램 로그인 =====");
+            System.out.println("이메일과 비밀번호를 입력하세요. (남은 시도: " + (maxAttempts - attempts) + ")");
 
-        System.out.print("비밀번호: ");
-        String password = scanner.nextLine();
+            System.out.print("이메일: ");
+            String email = scanner.nextLine();
+
+            System.out.print("비밀번호: ");
+            String password = scanner.nextLine();
 
 
-        loggedInMember = memberService.login(email, password);
 
-        if (loggedInMember != null) {
-            System.out.println("로그인 성공: " + loggedInMember.getMemberName() + "님 환영합니다!");
-            // 여기에 로그인 성공 후 메인 메뉴로 이동하는 코드 추가
-        } else {
-            System.out.println("로그인 실패: 이메일 또는 비밀번호가 일치하지 않습니다.");
+            loggedInMember = memberService.login(email, password);
+
+            if (loggedInMember != null) {
+                System.out.println("로그인 성공: " + loggedInMember.getMemberName() + "님 환영합니다!");
+                // 여기에 로그인 성공 후 메인 메뉴로 이동하는 코드 추가
+                return true;
+            } else {
+                System.out.println("로그인 실패: 이메일 또는 비밀번호가 일치하지 않습니다.");
+                attempts++;
+            }
         }
-    }
 
+        System.out.println("\n최대 로그인 시도 횟수를 초과했습니다. 프로그램을 종료합니다.");
+        return false;
+    }
 
     public boolean isLoggedIn() {
         return loggedInMember != null;
@@ -48,6 +58,7 @@ public class LoginUI {
     public Member getLoggedInMember() {
         return loggedInMember;
     }
+
 
     public void close() {
         if (scanner != null) {

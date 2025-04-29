@@ -34,6 +34,10 @@ public class MemberService {
                 member.setMemberId(rs.getInt("member_id"));
                 member.setMemberName(rs.getString("member_name"));
                 member.setEmail(rs.getString("email"));
+                // 보안을 위해 비밀번호는 설정하지 않음
+                System.out.println("로그인 성공: DB에서 사용자 정보 확인됨");
+            } else {
+                System.out.println("로그인 실패: 일치하는 정보가 없음");
             }
 
         } catch (SQLException e) {

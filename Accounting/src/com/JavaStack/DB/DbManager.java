@@ -14,9 +14,9 @@ public class DbManager {
 	private String PASSWD = "1234";
 	public Connection con;
 	private static DbManager inst = null;
-	protected Statement st;
-	protected ResultSet rs;
-	protected PreparedStatement pstmt;
+	public Statement st;
+	public ResultSet rs;
+	public PreparedStatement pstmt;
 
 	public DbManager() {
 		dbConnect();
