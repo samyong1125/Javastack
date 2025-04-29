@@ -1,48 +1,60 @@
 package com.JavaStack.model;
 
-public class Member {
 
-	int member_id;
-    String member_name;
-    String email;
-    String password;
-    
-    
-    
-	public Member(int member_id, String member_name, String email, String password) {
-		super();
-		this.member_id = member_id;
-		this.member_name = member_name;
-		this.email = email;
-		this.password = password;
-	}
-	
-	
-	public int getMember_id() {
-		return member_id;
-	}
-	public void setMember_id(int member_id) {
-		this.member_id = member_id;
-	}
-	public String getMember_name() {
-		return member_name;
-	}
-	public void setMember_name(String member_name) {
-		this.member_name = member_name;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-    
-    
-    
+public class Member {
+    private int memberId;
+    private String memberName;
+    private String email;
+    private String password;
+
+    public Member() {}
+
+    public Member(int memberId, String memberName, String email, String password) {
+        this.memberId = memberId;
+        this.memberName = memberName;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Member(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Member [memberId=" + memberId + ", memberName=" + memberName + ", email=" + email + "]";
+    }
 }
