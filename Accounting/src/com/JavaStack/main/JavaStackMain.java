@@ -30,7 +30,7 @@ public class JavaStackMain {
 
 			while (true) {
 				switch (HAHAHA) {
-					case 1: {
+					case 1: {	//지출, 수입
 						switch (HAHAHA) {
 							case 1: {
 
@@ -45,11 +45,11 @@ public class JavaStackMain {
 								//여기다 함수를 넣어주세요
 								break;
 							}
-							case 4: continue;
+							case 4: continue;	//이전
 						}
 						break;
 					}
-					case 2: {
+					case 2: {	//카테고리
 						switch (HAHAHA) {
 							case 1: {
 								//여기다 함수를 넣어주세요
@@ -63,11 +63,11 @@ public class JavaStackMain {
 								//여기다 함수를 넣어주세요
 								break;
 							}
-							case 4: {continue;}
+							case 4: {continue;}	//이전
 						}
 						break;
 					}
-					case 3: {
+					case 3: {	//통계
 						switch (HAHAHA) {
 							case 1: {
 								//여기다 함수를 넣어주세요
@@ -81,11 +81,11 @@ public class JavaStackMain {
 								//여기다 함수를 넣어주세요
 								break;
 							}
-							case 4: {continue;}
+							case 4: {continue;}	//이전
 						}
 						break;
 					}
-					case 4: {break;}
+					case 4: {break;}	//종료
 				}
 				break;
 			}
