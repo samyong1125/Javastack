@@ -45,6 +45,7 @@ public class JavaStackMain {
 								//여기다 함수를 넣어주세요
 								break;
 							}
+							case 4: continue;
 						}
 						break;
 					}
@@ -62,6 +63,7 @@ public class JavaStackMain {
 								//여기다 함수를 넣어주세요
 								break;
 							}
+							case 4: {continue;}
 						}
 						break;
 					}
@@ -79,9 +81,11 @@ public class JavaStackMain {
 								//여기다 함수를 넣어주세요
 								break;
 							}
+							case 4: {continue;}
 						}
 						break;
 					}
+					case 4: {break;}
 				}
 				break;
 			}
