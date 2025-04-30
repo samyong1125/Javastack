@@ -1,6 +1,7 @@
 package com.JavaStack.main;
 
 import com.JavaStack.DB.DbManager;
+import com.JavaStack.UI.AsdfUI;
 import com.JavaStack.UI.LoginUI;
 import com.JavaStack.service.RecordService;
 
@@ -10,6 +11,7 @@ public class JavaStackMain {
         try {
             DbManager db = DbManager.getInst();
             LoginUI loginUI = new LoginUI();
+            AsdfUI asdfUI = new AsdfUI();
             boolean loginSuccess = loginUI.showLoginScreen();
 
             if (!loginSuccess) {
@@ -21,89 +23,31 @@ public class JavaStackMain {
 
             RecordService recordService = new RecordService();
 
-            while (true) {
-                int mainChoice = loginUI.mainMenu(loginUI.scanner);
+            boolean runWhile = true;
 
-                if (mainChoice == 1) { // 수입/지출
-                    System.out.println("1. 수입 등록");
-                    System.out.println("2. 지출 등록");
-                    System.out.println("3. 기록 삭제");
-                    System.out.println("4. 기록 수정");
-                    System.out.println("5. 기록 전체 보기");
+            while (runWhile) {
+                System.out.println("---가계부---");
+                System.out.println("1. 수입/지출");
+                System.out.println("2. 카테고리");
+                System.out.println("3. 통계");
+                System.out.println("4. 종료");
+                System.out.print("번호를 입력하세요: ");
 
-                    int subChoice = loginUI.scanner.nextInt();
+                int mainChoice = loginUI.scanner.nextInt();
 
-                    if (subChoice == 1 || subChoice == 2) {
-                        System.out.print("금액 입력: ");
-                        int amount = loginUI.scanner.nextInt();
-                        loginUI.scanner.nextLine();
-
-                        System.out.print("내용 입력: ");
-                        String details = loginUI.scanner.nextLine();
-
-                        System.out.print("메모 입력(선택): ");
-                        String memo = loginUI.scanner.nextLine();
-
-                        int paymentId = 1;
-                        int categoryId = (subChoice == 1) ? 1 : 2;
-
-                        java.sql.Date today = new java.sql.Date(System.currentTimeMillis());
-
-                        recordService.insertRecord(
-                                loginUI.getLoggedInMember().getMemberId(),
-                                paymentId,
-                                categoryId,
-                                amount,
-                                details,
-                                today,
-                                memo
-                        );
-
-                    } else if (subChoice == 3) {
-                        System.out.print("삭제할 record_id 입력: ");
-                        int recordId = loginUI.scanner.nextInt();
-                        recordService.deleteRecord(recordId);
-
-                    } else if (subChoice == 4) {
-                        System.out.print("수정할 record_id 입력: ");
-                        int recordId = loginUI.scanner.nextInt();
-                        loginUI.scanner.nextLine();
-
-                        System.out.print("새 금액 입력: ");
-                        int newAmount = loginUI.scanner.nextInt();
-                        loginUI.scanner.nextLine();
-
-                        System.out.print("새 내용 입력: ");
-                        String newDetails = loginUI.scanner.nextLine();
-
-                        System.out.print("새 메모 입력: ");
-                        String newMemo = loginUI.scanner.nextLine();
-
-                        recordService.updateRecordAllFields(
-                                recordId,
-                                loginUI.getLoggedInMember().getMemberId(),
-                                1, 1,
-                                newAmount,
-                                newDetails,
-                                new java.sql.Date(System.currentTimeMillis()),
-                                newMemo
-                        );
-
-                    } else if (subChoice == 5) {
-                        recordService.showRecords();
-
-                    } else {
-                        System.out.println("올바른 숫자를 입력하세요.");
-                    }
-
-                } else if (mainChoice == 2) {
-                    // 카테고리 관리
-                } else if (mainChoice == 3) {
-                    // 통계 보기
-                } else if (mainChoice == 4) {
-                    break;
-                } else {
-                    System.out.println("올바른 숫자를 입력하세요.");
+                switch (mainChoice) {
+                    case 1:
+                        asdfUI.recordUI(loginUI.scanner);
+                        break;
+                    case 2: case 3:
+                        System.out.println("메인 메뉴 " + mainChoice + " 선택됨.");
+                        break;
+                    case 4:
+                        System.out.println("프로그램을 종료합니다.");
+                        runWhile = false;
+                        break;
+                    default:
+                        System.out.println("잘못된 입력입니다. 1~5 사이의 숫자를 입력하세요.");
                 }
             }
 

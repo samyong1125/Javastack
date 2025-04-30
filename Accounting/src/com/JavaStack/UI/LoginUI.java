@@ -59,20 +59,6 @@ public class LoginUI {
         return loggedInMember;
     }
 
-    public int mainMenu(Scanner s) {
-        System.out.println("=======================");
-        System.out.println("가계부");
-        System.out.println("=======================");
-        System.out.println("1. 지출/수입");
-        System.out.println("2. 카테고리");
-        System.out.println("3. 통계");
-        System.out.println("4. 종료");
-        System.out.println("=======================");
-        System.out.print("메뉴 선택:");
-        int m = s.nextInt();
-        return m;
-    }
-
 
     public void close() {
         if (scanner != null) {

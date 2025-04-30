@@ -4,26 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20eb8b75-a6b9-4a67-8c54-80ff2ffc51f0" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="20eb8b75-a6b9-4a67-8c54-80ff2ffc51f0" name="변경" comment="asdf">
+      <change afterPath="$PROJECT_DIR$/src/com/JavaStack/UI/AsdfUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Accounting.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RecordService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/DB/DbManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/UI/LoginUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/model/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/model/Member.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/service/MemberService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/JavaStack/service/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/service/RecordService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -87,11 +84,24 @@
       <option name="presentableId" value="Default" />
       <updated>1745979810103</updated>
       <workItem from="1745979811214" duration="161000" />
-      <workItem from="1745979984441" duration="1528000" />
+      <workItem from="1745979984441" duration="4335000" />
     </task>
+    <task id="LOCAL-00001" summary="asdf">
+      <option name="closed" value="true" />
+      <created>1745981538002</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745981538002</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="asdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdf" />
   </component>
 </project>
