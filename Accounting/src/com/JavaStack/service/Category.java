@@ -15,9 +15,8 @@ public class Category {
 		String sql = "INSERT INTO category (category_id, category_name, category_type)"
 				+ " VALUES (seq_category_id.NEXTVAL, ?, ?)";
 	    try (PreparedStatement pstmt = db.con.prepareStatement(sql)) {
-	        pstmt.setInt(1, CategoryID);
-	        pstmt.setString(2, CategoryName);	        
-	        pstmt.setString(3, CategoryType);
+	        pstmt.setString(1, CategoryName);	        
+	        pstmt.setString(2, CategoryType);
 	        
 	        pstmt.executeUpdate();
 	        db.commit();
