@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.JavaStack.DB.DbManager;
-import com.JavaStack.model.Member;
-
 
 public class RecordService {
 		DbManager db = DbManager.getInst();

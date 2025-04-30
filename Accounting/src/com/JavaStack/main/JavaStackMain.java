@@ -31,7 +31,7 @@ public class JavaStackMain {
                     System.out.println("4. 기록 수정");
                     System.out.println("5. 기록 전체 보기");
 
-                    int subChoice = loginUI.mainMenu(loginUI.scanner);
+                    int subChoice = loginUI.scanner.nextInt();
 
                     if (subChoice == 1 || subChoice == 2) {
                         System.out.print("금액 입력: ");

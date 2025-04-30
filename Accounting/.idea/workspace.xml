@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26aa15db-2cc2-450b-81ab-bf7693ef9355" name="변경" comment="주석 추가">
+    <list default="true" id="20eb8b75-a6b9-4a67-8c54-80ff2ffc51f0" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/UI/LoginUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/JavaStack/UI/LoginUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/UI/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Accounting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/RecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/DB/DbManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/UI/LoginUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/model/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/service/MemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/module-info.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/JavaStack/service/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/service/RecordService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,40 +37,40 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/samyong1125/Javastack.git&quot;,
-    &quot;accountId&quot;: &quot;4a11e3bc-a61a-4a2b-b278-3ba4e6ce13dc&quot;
+    &quot;accountId&quot;: &quot;4e21deec-6f10-4191-8d42-eef0738d8e56&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2wQCH04saHkyKek75iOCq1NZZJ8" />
+  <component name="ProjectId" id="2wQhe86nalol5QvWCP7YzKlVIpS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;라이브러리&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;애플리케이션.JavaStackMain.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "라이브러리",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true",
+    "애플리케이션.JavaStackMain.executor": "Run"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,40 +81,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="26aa15db-2cc2-450b-81ab-bf7693ef9355" name="변경" comment="" />
-      <created>1745964322141</created>
+      <changelist id="20eb8b75-a6b9-4a67-8c54-80ff2ffc51f0" name="변경" comment="" />
+      <created>1745979810103</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1745964322141</updated>
-      <workItem from="1745964323180" duration="1358000" />
+      <updated>1745979810103</updated>
+      <workItem from="1745979811214" duration="161000" />
+      <workItem from="1745979984441" duration="1528000" />
     </task>
-    <task id="LOCAL-00001" summary="주석 추가">
-      <option name="closed" value="true" />
-      <created>1745970594396</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1745970594396</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="주석 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="주석 추가" />
   </component>
 </project>
