@@ -7,7 +7,7 @@ public class Category {
 	public Category(Member mb) {
 		super();
 		// TODO Auto-generated constructor stub
-		mb.getMemberId()
+		mb.getMemberId();
 		
 	}
 
