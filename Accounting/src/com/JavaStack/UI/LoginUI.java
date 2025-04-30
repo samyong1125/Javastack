@@ -5,7 +5,6 @@ import java.util.Scanner;
 import com.JavaStack.model.Member;
 import com.JavaStack.service.MemberService;
 
-
 public class LoginUI {
     public Scanner scanner;
     private MemberService memberService;
@@ -31,7 +30,6 @@ public class LoginUI {
 
             System.out.print("비밀번호: ");
             String password = scanner.nextLine();
-
 
 
             loggedInMember = memberService.login(email, password);

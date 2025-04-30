@@ -38,7 +38,8 @@ public class JavaStackMain {
                     case 1:
                         asdfUI.recordUI(loginUI.scanner);
                         break;
-                    case 2: case 3:
+                    case 2:
+                    case 3:
                         System.out.println("메인 메뉴 " + mainChoice + " 선택됨.");
                         break;
                     case 4:
