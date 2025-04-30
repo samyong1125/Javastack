@@ -11,7 +11,6 @@ public class JavaStackMain {
         try {
             DbManager db = DbManager.getInst();
             LoginUI loginUI = new LoginUI();
-            RecordUI asdfUI = new RecordUI();
             boolean loginSuccess = loginUI.showLoginScreen();
 
             if (!loginSuccess) {
