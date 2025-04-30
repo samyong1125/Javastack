@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DbManager {
-	private String CLASS = "oracle.jdbc.driver.OracleDriver";
-	private String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-	private String USER = "test";
-	private String PASSWD = "1234";
+	private final String CLASS = "oracle.jdbc.driver.OracleDriver";
+	private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
+	private final String USER = "test";
+	private final String PASSWD = "1234";
 	public Connection con;
 	private static DbManager inst = null;
 	public Statement st;

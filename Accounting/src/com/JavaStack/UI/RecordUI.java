@@ -36,7 +36,7 @@ public class RecordUI {
     private static RecordService recordService;
 
     public RecordUI() {
-        this.recordService = new RecordService();
+        recordService = new RecordService();
     }
 
     public static void recordUI(Scanner sc, Member member) {

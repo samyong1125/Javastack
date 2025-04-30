@@ -7,7 +7,7 @@ import com.JavaStack.service.MemberService;
 
 public class LoginUI {
     public Scanner scanner;
-    private MemberService memberService;
+    private final MemberService memberService;
     private Member loggedInMember;
 
     public LoginUI() {

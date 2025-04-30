@@ -9,7 +9,7 @@ import com.JavaStack.model.Member;
 
 
 public class MemberService {
-    private DbManager dbManager;
+    private final DbManager dbManager;
 
     public MemberService() {
         dbManager = DbManager.getInst();
