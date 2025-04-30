@@ -26,68 +26,47 @@ public class JavaStackMain {
 
 			RecordService recordService = new RecordService();
 
-			int HAHAHA = loginUI.mainMenu(loginUI.scanner);
-
 			while (true) {
-				switch (HAHAHA) {
-					case 1: {	//지출, 수입
-						switch (HAHAHA) {
-							case 1: {
 
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 2: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 3: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 4: continue;	//이전
-						}
+				if (loginUI.mainMenu(loginUI.scanner) == 1) {	//지출, 수입
+					if (loginUI.mainMenu(loginUI.scanner) == 1) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 2) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 3) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 4) {
+
+					} else {System.out.println("올바른 숫자를 입력하세요");}
+
+
+				} else if (loginUI.mainMenu(loginUI.scanner) == 2) {	//카테고리
+					if (loginUI.mainMenu(loginUI.scanner) == 1) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 2) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 3) {
+						//여기다 함수를 넣어주세요
 						break;
-					}
-					case 2: {	//카테고리
-						switch (HAHAHA) {
-							case 1: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 2: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 3: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 4: {continue;}	//이전
-						}
-						break;
-					}
-					case 3: {	//통계
-						switch (HAHAHA) {
-							case 1: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 2: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 3: {
-								//여기다 함수를 넣어주세요
-								break;
-							}
-							case 4: {continue;}	//이전
-						}
-						break;
-					}
-					case 4: {break;}	//종료
-				}
-				break;
+					} else if (loginUI.mainMenu(loginUI.scanner) == 4) {
+
+					} else {System.out.println("올바른 숫자를 입력하세요");}
+
+					
+				} else if (loginUI.mainMenu(loginUI.scanner) == 3) {	//통계보기
+					if (loginUI.mainMenu(loginUI.scanner) == 1) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 2) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 3) {
+						//여기다 함수를 넣어주세요
+					} else if (loginUI.mainMenu(loginUI.scanner) == 4) {
+
+					} else {System.out.println("올바른 숫자를 입력하세요");}
+				} else if (loginUI.mainMenu(loginUI.scanner) == 4) {	//종료
+					break;
+				} else {System.out.println("올바른 숫자를 입력하세요");}
+
 			}
 
 			loginUI.close();

@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26aa15db-2cc2-450b-81ab-bf7693ef9355" name="변경" comment="">
+    <list default="true" id="26aa15db-2cc2-450b-81ab-bf7693ef9355" name="변경" comment="주석 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/UI/LoginUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/JavaStack/UI/LoginUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/UI/Menu.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +80,15 @@
       <updated>1745964322141</updated>
       <workItem from="1745964323180" duration="1358000" />
     </task>
+    <task id="LOCAL-00001" summary="주석 추가">
+      <option name="closed" value="true" />
+      <created>1745970594396</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745970594396</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,5 +104,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="주석 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="주석 추가" />
   </component>
 </project>
