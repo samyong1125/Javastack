@@ -14,35 +14,35 @@ public class RecordService {
 		DbManager db = DbManager.getInst();
 		// 1. 데이터 등록 (Insert)
 		public void insertRecord(
-			    int memberId,
-			    int paymentId,
-			    int categoryId,
-			    int amount,
-			    String recordDetails,
-			    java.sql.Date regDate,
-			    String memoContent) 
-		{
-			    String sql = "INSERT INTO record (" +
-			                 "record_id, member_id, payment_id, category_id, amount, record_details, reg_date, memo_content) " +
-			                 "VALUES (seq_record_id.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
+		        int memberId,
+		        int paymentId,
+		        int categoryId,
+		        int amount,
+		        String recordDetails,
+		        java.sql.Date regDate,
+		        String memoContent
+		) {
+		    String sql = "INSERT INTO record (" +
+		                 "record_id, member_id, payment_id, category_id, amount, record_details, reg_date, memo_content) " +
+		                 "VALUES (seq_record_id.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
 
-			    try (PreparedStatement pstmt = db.con.prepareStatement(sql)) {
-			        pstmt.setInt(1, memberId);
-			        pstmt.setInt(2, paymentId);
-			        pstmt.setInt(3, categoryId);
-			        pstmt.setInt(4, amount);
-			        pstmt.setString(5, recordDetails);
-			        pstmt.setDate(6, regDate);
-			        pstmt.setString(7, memoContent);  // ✅ 추가된 필드
+		    try (PreparedStatement pstmt = db.con.prepareStatement(sql)) {
+		        pstmt.setInt(1, memberId);
+		        pstmt.setInt(2, paymentId);
+		        pstmt.setInt(3, categoryId);
+		        pstmt.setInt(4, amount);
+		        pstmt.setString(5, recordDetails);
+		        pstmt.setDate(6, regDate);
+		        pstmt.setString(7, (memoContent == null || memoContent.trim().isEmpty()) ? null : memoContent);
 
-			        pstmt.executeUpdate();
-			        db.con.commit();
-			        System.out.println("Record 등록 성공");
-			    } catch (SQLException e) {
-			        db.showErr(e);
-			        try { db.con.rollback(); } catch (SQLException ex) { db.showErr(ex); }
-			    }
-			}
+		        pstmt.executeUpdate();
+		        db.con.commit();
+		        System.out.println("Record 등록 성공");
+		    } catch (SQLException e) {
+		        db.showErr(e);
+		        try { db.con.rollback(); } catch (SQLException ex) { db.showErr(ex); }
+		    }
+		}
 
 
 	    // 2. 데이터 삭제 (Delete)
