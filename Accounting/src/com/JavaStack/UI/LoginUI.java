@@ -5,7 +5,6 @@ import java.util.Scanner;
 import com.JavaStack.model.Member;
 import com.JavaStack.service.MemberService;
 
-
 public class LoginUI {
     public Scanner scanner;
     private MemberService memberService;
@@ -33,7 +32,6 @@ public class LoginUI {
             String password = scanner.nextLine();
 
 
-
             loggedInMember = memberService.login(email, password);
 
             if (loggedInMember != null) {
@@ -57,20 +55,6 @@ public class LoginUI {
 
     public Member getLoggedInMember() {
         return loggedInMember;
-    }
-
-    public int mainMenu(Scanner s) {
-        System.out.println("=======================");
-        System.out.println("가계부");
-        System.out.println("=======================");
-        System.out.println("1. 지출/수입");
-        System.out.println("2. 카테고리");
-        System.out.println("3. 통계");
-        System.out.println("4. 종료");
-        System.out.println("=======================");
-        System.out.print("메뉴 선택:");
-        int m = s.nextInt();
-        return m;
     }
 
 
