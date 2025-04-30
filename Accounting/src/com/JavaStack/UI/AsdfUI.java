@@ -13,7 +13,7 @@ public class AsdfUI {
             System.out.println("3.");
             System.out.println("4.");
             System.out.println("5. 메인 메뉴로 돌아가기");
-            System.out.print("번호를 입력하세요: ");
+            System.out.print("숫자를 입력하세요: ");
 
             int subChoice = sc.nextInt();
 

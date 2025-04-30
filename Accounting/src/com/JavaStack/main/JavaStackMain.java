@@ -24,14 +24,13 @@ public class JavaStackMain {
             RecordService recordService = new RecordService();
 
             boolean runWhile = true;
-
             while (runWhile) {
                 System.out.println("---가계부---");
                 System.out.println("1. 수입/지출");
                 System.out.println("2. 카테고리");
                 System.out.println("3. 통계");
                 System.out.println("4. 종료");
-                System.out.print("번호를 입력하세요: ");
+                System.out.print("숫자를 입력하세요: ");
 
                 int mainChoice = loginUI.scanner.nextInt();
 

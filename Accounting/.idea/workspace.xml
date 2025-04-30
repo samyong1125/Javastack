@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20eb8b75-a6b9-4a67-8c54-80ff2ffc51f0" name="변경" comment="asdf">
-      <change afterPath="$PROJECT_DIR$/src/com/JavaStack/UI/AsdfUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/UI/LoginUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/UI/AsdfUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/JavaStack/UI/AsdfUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/JavaStack/main/JavaStackMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/JavaStack/UI/AsdfUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/UI/AsdfUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/JavaStack/main/JavaStackMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745979810103</updated>
       <workItem from="1745979811214" duration="161000" />
-      <workItem from="1745979984441" duration="4335000" />
+      <workItem from="1745979984441" duration="5380000" />
     </task>
     <task id="LOCAL-00001" summary="asdf">
       <option name="closed" value="true" />
