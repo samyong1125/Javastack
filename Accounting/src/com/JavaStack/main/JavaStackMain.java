@@ -1,7 +1,7 @@
 package com.JavaStack.main;
 
 import com.JavaStack.DB.DbManager;
-import com.JavaStack.UI.AsdfUI;
+import com.JavaStack.UI.RecordUI;
 import com.JavaStack.UI.LoginUI;
 import com.JavaStack.service.RecordService;
 
@@ -11,7 +11,7 @@ public class JavaStackMain {
         try {
             DbManager db = DbManager.getInst();
             LoginUI loginUI = new LoginUI();
-            AsdfUI asdfUI = new AsdfUI();
+            RecordUI asdfUI = new RecordUI();
             boolean loginSuccess = loginUI.showLoginScreen();
 
             if (!loginSuccess) {
@@ -36,7 +36,7 @@ public class JavaStackMain {
 
                 switch (mainChoice) {
                     case 1:
-                        asdfUI.recordUI(loginUI.scanner);
+                        RecordUI.recordUI(loginUI.scanner, loginUI.getLoggedInMember());
                         break;
                     case 2:
                     case 3:
