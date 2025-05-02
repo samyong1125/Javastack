@@ -35,12 +35,13 @@ public class RecordUI {
 
     private static RecordService recordService;
 
-    public RecordUI() {
-        recordService = new RecordService();
-    }
 
     public static void recordUI(Scanner sc, Member member) {
         boolean inSubMenu = true;
+
+        if (recordService == null) {
+            recordService = new RecordService();
+        }
 
         while (inSubMenu) {
             System.out.println("\n--- [지출/수입 서브메뉴] ---");
