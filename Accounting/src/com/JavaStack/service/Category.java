@@ -95,8 +95,13 @@ public class Category {
         System.out.print("추가할 카테고리 이름: ");
         String CategoryName = sc.nextLine();
         
-        System.out.print("카테고리 타입: ");
+        System.out.print("카테고리 타입(IN or EX): ");
         String CategoryType = sc.nextLine();
+        
+        if (!CategoryType.equals("IN") && !CategoryType.equals("EX")) {
+            System.out.println("존재하지 않는 카테고리 타입입니다");
+            return;
+        }
         
         insertCategory(CategoryName, CategoryType);
         
@@ -113,10 +118,15 @@ public class Category {
 		sc.nextLine();
 		System.out.print("수정할 카테고리 이름: ");
 		String OldName = sc.nextLine();
-        System.out.print("카테고리 타입: ");
-        String CategoryType = sc.nextLine();
         System.out.print("새로운 카테고리 이름: ");
         String NewName = sc.nextLine();
+        System.out.print("새로운 카테고리 타입(IN or EX): ");
+        String CategoryType = sc.nextLine();
+        
+        if (!CategoryType.equals("IN") && !CategoryType.equals("EX")) {
+            System.out.println("존재하지 않는 카테고리 타입입니다");
+            return;
+        }
         
         updateCategory(NewName, CategoryType, OldName);
 	}
