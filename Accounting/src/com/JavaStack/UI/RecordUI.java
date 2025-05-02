@@ -154,18 +154,15 @@ public class RecordUI {
             int num = sc.nextInt();
             switch (num) {
                 case 1:
-                    //월 지출 통계
                     ca.insertCategoryName(sc);
                     break;
 
                 case 2:
-                    //년도별 지출 통계
-
+                    ca.deleteCategoryName(sc);
                     break;
 
                 case 3:
-                    //카테고리별 지출 통계
-
+                    ca.updateCategoryName(sc);
                     break;
 
                 case 4:
