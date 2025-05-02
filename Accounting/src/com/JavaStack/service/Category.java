@@ -3,13 +3,13 @@ package com.JavaStack.service;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet; 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import com.JavaStack.DB.DbManager;
 
 public class Category {
 	DbManager db = DbManager.getInst();
     public void insertCategory(
-    		int CategoryID, 
     		String CategoryName, 
     		String CategoryType) {
 		String sql = "INSERT INTO category (category_id, category_name, category_type)"
@@ -19,18 +19,21 @@ public class Category {
 	        pstmt.setString(2, CategoryType);
 	        
 	        pstmt.executeUpdate();
-	        db.commit();
+	        db.con.commit();
 	        System.out.println("카테고리 등록 성공");
         } catch (SQLException e) {
-	        db.showErr(e);
-	        try { db.con.rollback(); } catch (SQLException ex) { db.showErr(ex); }
+			db.showErr(e);
+			try {
+				db.con.rollback();
+			} catch (SQLException ex) {
+				db.showErr(ex); }
         }
     }
     
-    public void deleteCategory(int CategoryID) {
-    	String sql = "DELETE FROM Category WHERE Category_id = ?";
+    public void deleteCategory(String CategoryName) {
+    	String sql = "DELETE FROM Category WHERE category_name = ?";
         try (PreparedStatement pstmt = db.con.prepareStatement(sql)) {
-            pstmt.setInt(1, CategoryID);
+            pstmt.setString(1, CategoryName);
             int rows = pstmt.executeUpdate();
             db.commit();
 
@@ -46,22 +49,22 @@ public class Category {
     }
 
     public void updateCategory(
-    		int CategoryID, 
-    		String CategoryName, 
-    		String CategoryType) {
+    		String NewName, 
+    		String CategoryType,
+    		String OldName) {
         String sql = "UPDATE Category SET category_name = ?, "
-        		+ "category_type = ? WHERE category_id = ?";
+        		+ "category_type = ? WHERE category_name = ?";
         try (PreparedStatement pstmt = db.con.prepareStatement(sql)) {
-            pstmt.setString(1, CategoryName);
+            pstmt.setString(1, NewName);
             pstmt.setString(2, CategoryType);
-            pstmt.setInt(3, CategoryID);
-
+            pstmt.setString(3, OldName);
+            
             int rows = pstmt.executeUpdate();
             db.commit();
             if (rows > 0) {
                 System.out.println("카테고리 수정 성공");
             } else {
-                System.out.println("해당 카테고리 ID가 존재하지 않습니다.");
+                System.out.println("해당 카테고리 이름이 존재하지 않습니다.");
             }
         } catch (SQLException e) {
             db.showErr(e);
@@ -75,6 +78,7 @@ public class Category {
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
+            	System.out.println("--------------------------");
                 System.out.println("카테고리 ID: " + rs.getInt("category_id"));
                 System.out.println("카테고리 이름: " + rs.getString("category_name"));
                 System.out.println("카테고리 유형: " + rs.getString("category_type"));
@@ -85,5 +89,36 @@ public class Category {
             try { db.con.rollback(); } catch (SQLException ex) { db.showErr(ex); }
         }
     }
+    
+    public void insertCategoryName(Scanner sc) {
+    	sc.nextLine();
+        System.out.print("추가할 카테고리 이름: ");
+        String CategoryName = sc.nextLine();
+        
+        System.out.print("카테고리 타입: ");
+        String CategoryType = sc.nextLine();
+        
+        insertCategory(CategoryName, CategoryType);
+        
+    }
+    
+	public void deleteCategoryName(Scanner sc) {
+		sc.nextLine();
+		System.out.print("삭제할 카테고리 이름: ");
+		String CategoryName = sc.nextLine();
+		deleteCategory(CategoryName);
+	}
+	
+	public void updateCategoryName(Scanner sc) {
+		sc.nextLine();
+		System.out.print("수정할 카테고리 이름: ");
+		String OldName = sc.nextLine();
+        System.out.print("카테고리 타입: ");
+        String CategoryType = sc.nextLine();
+        System.out.print("새로운 카테고리 이름: ");
+        String NewName = sc.nextLine();
+        
+        updateCategory(NewName, CategoryType, OldName);
+	}
 }
     
