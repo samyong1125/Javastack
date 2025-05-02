@@ -3,6 +3,7 @@ package com.JavaStack.UI;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import com.JavaStack.DB.DbManager;
@@ -30,11 +31,11 @@ public class LoginUI {
             System.out.println("이메일과 비밀번호를 입력하세요. (남은 시도: " + (maxAttempts - attempts) + ")");
 
             System.out.print("이메일: ");
-            String email = scanner.nextLine();
-
+            //String email = scanner.nextLine();
+            String email = "hong@test.com";
             System.out.print("비밀번호: ");
-            String password = scanner.nextLine();
-
+            //String password = scanner.nextLine();
+            String password ="pass123";
 
             loggedInMember = memberService.login(email, password);
 
@@ -61,7 +62,7 @@ public class LoginUI {
         return loggedInMember;
     }
 
-    public static int updateBudgetAmount(int memberId) {
+    public int updateBudgetAmount(int memberId) {
         DbManager db = DbManager.getInst();
         Connection conn = db.getCon();
         PreparedStatement pstmt = null;
@@ -90,32 +91,30 @@ public class LoginUI {
             rs.close();
             pstmt.close();
 
+            System.out.println(totalExpenditure);
+            System.out.println(memberId);
             // 2. 예산에서 지출금액 차감
-            String updateBudgetSql = """
-                UPDATE budget
-                SET amount = amount - ?
-                WHERE member_id = ?
-                """;
+            String updateBudgetSql = " UPDATE budget " +
+                    " SET BUDGET_AMOUNT = BUDGET_AMOUNT - ? " +
+                    " WHERE member_id = ? ";
 
             pstmt = conn.prepareStatement(updateBudgetSql);
             pstmt.setInt(1, totalExpenditure);
             pstmt.setInt(2, memberId);
             pstmt.executeUpdate();
+            conn.commit();
             pstmt.close();
 
             // 3. 갱신된 예산(amount) 조회
-            String selectUpdatedAmountSql = """
-                SELECT amount
-                FROM budget
-                WHERE member_id = ?
-                """;
+            String selectUpdatedAmountSql = "SELECT BUDGET_AMOUNT FROM budget " +
+                    " WHERE member_id = ? ";
 
             pstmt = conn.prepareStatement(selectUpdatedAmountSql);
             pstmt.setInt(1, memberId);
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                updatedBudgetAmount = rs.getInt("amount");
+                updatedBudgetAmount = rs.getInt("BUDGET_AMOUNT");
             }
 
         } catch (Exception e) {
@@ -126,6 +125,8 @@ public class LoginUI {
             try { if (pstmt != null) pstmt.close(); } catch (Exception e) {}
             try { if (conn != null) conn.close(); } catch (Exception e) {}
         }
+
+        System.out.println(updatedBudgetAmount + "입니다.");
         return updatedBudgetAmount;
     }
 

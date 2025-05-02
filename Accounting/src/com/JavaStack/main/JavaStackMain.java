@@ -18,6 +18,9 @@ public class JavaStackMain {
 
             System.out.println("로그인됨: " + loginUI.getLoggedInMember());
 
+            // 테스트 코드
+            loginUI.updateBudgetAmount(loginUI.getLoggedInMember().getMemberId());
+
             boolean runWhile = true;
             while (runWhile) {
                 System.out.println("---가계부---");
