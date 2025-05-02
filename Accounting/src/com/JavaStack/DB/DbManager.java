@@ -29,6 +29,10 @@ public class DbManager {
 		return inst;
 	}
 
+	public Connection getCon() {
+		return con;
+	}
+
 	public void dbConnect() {
 		try {
 			Class.forName(CLASS);

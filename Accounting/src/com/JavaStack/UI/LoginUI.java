@@ -1,7 +1,11 @@
 package com.JavaStack.UI;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Scanner;
 
+import com.JavaStack.DB.DbManager;
 import com.JavaStack.model.Member;
 import com.JavaStack.service.MemberService;
 
@@ -55,6 +59,74 @@ public class LoginUI {
 
     public Member getLoggedInMember() {
         return loggedInMember;
+    }
+
+    public static int updateBudgetAmount(int memberId) {
+        DbManager db = DbManager.getInst();
+        Connection conn = db.getCon();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        int updatedBudgetAmount = -1;
+
+        try {
+            // 1. 지출(EX) 총액 계산
+            String sumExpenditureSql = """
+                SELECT NVL(SUM(r.amount), 0) AS total_expenditure
+                FROM record r
+                JOIN category c ON r.category_id = c.category_id
+                WHERE c.category_type = 'EX' AND r.member_id = ?
+                """;
+
+            pstmt = conn.prepareStatement(sumExpenditureSql);
+            pstmt.setInt(1, memberId);
+            rs = pstmt.executeQuery();
+
+            int totalExpenditure = 0;
+            if (rs.next()) {
+                totalExpenditure = rs.getInt("total_expenditure");
+            }
+
+            rs.close();
+            pstmt.close();
+
+            // 2. 예산에서 지출금액 차감
+            String updateBudgetSql = """
+                UPDATE budget
+                SET amount = amount - ?
+                WHERE member_id = ?
+                """;
+
+            pstmt = conn.prepareStatement(updateBudgetSql);
+            pstmt.setInt(1, totalExpenditure);
+            pstmt.setInt(2, memberId);
+            pstmt.executeUpdate();
+            pstmt.close();
+
+            // 3. 갱신된 예산(amount) 조회
+            String selectUpdatedAmountSql = """
+                SELECT amount
+                FROM budget
+                WHERE member_id = ?
+                """;
+
+            pstmt = conn.prepareStatement(selectUpdatedAmountSql);
+            pstmt.setInt(1, memberId);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                updatedBudgetAmount = rs.getInt("amount");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 자원 해제
+            try { if (rs != null) rs.close(); } catch (Exception e) {}
+            try { if (pstmt != null) pstmt.close(); } catch (Exception e) {}
+            try { if (conn != null) conn.close(); } catch (Exception e) {}
+        }
+        return updatedBudgetAmount;
     }
 
 
