@@ -137,8 +137,8 @@ public class RecordUI {
     static Category ca;
 
     public static void CateUI(Scanner sc, Member member) {
-        if(ss == null) {
-            ss = new StatisticsService();
+        if(ca == null) {
+            ca = new Category();
         }
 
 
