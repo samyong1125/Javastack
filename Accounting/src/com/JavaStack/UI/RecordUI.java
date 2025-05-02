@@ -155,7 +155,7 @@ public class RecordUI {
             switch (num) {
                 case 1:
                     //월 지출 통계
-//                    ca.insertCategory();
+                    ca.insertCategoryName(sc);
                     break;
 
                 case 2:

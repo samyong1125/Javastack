@@ -34,6 +34,8 @@ public class JavaStackMain {
                         RecordUI.recordUI(loginUI.scanner, loginUI.getLoggedInMember());
                         break;
                     case 2:
+                        RecordUI.CateUI(loginUI.scanner, loginUI.getLoggedInMember());
+                        break;
                     case 3:
                         RecordUI.StaUI(loginUI.scanner, loginUI.getLoggedInMember());
                         break;
