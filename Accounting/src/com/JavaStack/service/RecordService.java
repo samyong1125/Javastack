@@ -44,7 +44,7 @@ public class RecordService {
 	// 2. 데이터 삭제 (Delete)
 	public void deleteRecord(int recordId) {
 		String sql = "DELETE FROM Record WHERE record_id = ?";
-		// record_id입력받아야 함.
+		// record_id 입력받아야 함.
 
 		try (PreparedStatement pstmt = db.con.prepareStatement(sql)) {
 			pstmt.setInt(1, recordId);

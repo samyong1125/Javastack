@@ -19,9 +19,7 @@ public class JavaStackMain {
             }
 
             System.out.println("로그인됨: " + loginUI.getLoggedInMember());
-
-            RecordService recordService = new RecordService();
-
+            
             boolean runWhile = true;
             while (runWhile) {
                 System.out.println("---가계부---");
