@@ -78,6 +78,7 @@ public class Category {
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
+            	System.out.println("--------------------------");
                 System.out.println("카테고리 ID: " + rs.getInt("category_id"));
                 System.out.println("카테고리 이름: " + rs.getString("category_name"));
                 System.out.println("카테고리 유형: " + rs.getString("category_type"));
@@ -100,5 +101,24 @@ public class Category {
         insertCategory(CategoryName, CategoryType);
         
     }
+    
+	public void deleteCategoryName(Scanner sc) {
+		sc.nextLine();
+		System.out.print("삭제할 카테고리 이름: ");
+		String CategoryName = sc.nextLine();
+		deleteCategory(CategoryName);
+	}
+	
+	public void updateCategoryName(Scanner sc) {
+		sc.nextLine();
+		System.out.print("수정할 카테고리 이름: ");
+		String OldName = sc.nextLine();
+        System.out.print("카테고리 타입: ");
+        String CategoryType = sc.nextLine();
+        System.out.print("새로운 카테고리 이름: ");
+        String NewName = sc.nextLine();
+        
+        updateCategory(NewName, CategoryType, OldName);
+	}
 }
     
