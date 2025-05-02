@@ -86,14 +86,14 @@ public class RecordUI {
         }
     }
 
-    StatisticsService ss;
+    static StatisticsService ss;
 
-    public void ShowUI(Scanner sc, Member member) {
+    public static void StaUI(Scanner sc, Member member) {
         if(ss == null) {
             ss = new StatisticsService();
         }
 
-        int num = sc.nextInt();
+
         boolean isCheck = false;
 
         while(!isCheck) {
@@ -103,6 +103,7 @@ public class RecordUI {
             System.out.println("3. 카테고리별 모든 지출 통계 보기");
             System.out.println("4. 뒤로가기");
             System.out.print("숫자를 입력하세요: ");
+            int num = sc.nextInt();
             switch (num) {
                 case 1:
                     //월 지출 통계
@@ -129,10 +130,6 @@ public class RecordUI {
                     break;
             }
         }
-
-
     }
-
-	
 }
 

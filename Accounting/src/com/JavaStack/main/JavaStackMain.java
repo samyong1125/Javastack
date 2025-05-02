@@ -37,7 +37,7 @@ public class JavaStackMain {
                         break;
                     case 2:
                     case 3:
-                        System.out.println("메인 메뉴 " + mainChoice + " 선택됨.");
+                        RecordUI.StaUI(loginUI.scanner, loginUI.getLoggedInMember());
                         break;
                     case 4:
                         System.out.println("프로그램을 종료합니다.");

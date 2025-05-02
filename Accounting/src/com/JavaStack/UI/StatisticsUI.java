@@ -3,7 +3,6 @@ package com.JavaStack.UI;
 import java.util.Scanner;
 
 import com.JavaStack.model.Member;
-import com.JavaStack.service.MemberService;
 import com.JavaStack.service.StatisticsService;
 
 public class StatisticsUI {
