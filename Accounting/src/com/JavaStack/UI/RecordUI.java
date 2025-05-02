@@ -91,14 +91,14 @@ public class RecordUI {
     static StatisticsService ss;
 
     public static void StaUI(Scanner sc, Member member) {
-        if(ss == null) {
+        if (ss == null) {
             ss = new StatisticsService();
         }
 
 
         boolean isCheck = false;
 
-        while(!isCheck) {
+        while (!isCheck) {
             System.out.println("\n--- [통계 서브메뉴] ---");
             System.out.println("1. 월 지출 통계 보기");
             System.out.println("2. 년도 별 지출 통계 보기");
@@ -137,19 +137,20 @@ public class RecordUI {
     static Category ca;
 
     public static void CateUI(Scanner sc, Member member) {
-        if(ca == null) {
+        if (ca == null) {
             ca = new Category();
         }
 
 
         boolean isCheck = false;
 
-        while(!isCheck) {
+        while (!isCheck) {
             System.out.println("\n--- [통계 서브메뉴] ---");
             System.out.println("1. 카테고리 추가");
             System.out.println("2. 카테고리 삭제");
             System.out.println("3. 카테고리 수정");
             System.out.println("4. 카테고리 표시");
+            System.out.println("5. 뒤로가기");
             System.out.print("숫자를 입력하세요: ");
             int num = sc.nextInt();
             switch (num) {
@@ -164,12 +165,13 @@ public class RecordUI {
                 case 3:
                     ca.updateCategoryName(sc);
                     break;
-
                 case 4:
+                    ca.showCategory();
+                    break;
+                case 5:
                     //뒤로가기
                     isCheck = true;
                     break;
-
                 default:
                     //잘못 입력하였습니다.
                     break;
