@@ -3,8 +3,6 @@ package com.JavaStack.main;
 import com.JavaStack.DB.DbManager;
 import com.JavaStack.UI.RecordUI;
 import com.JavaStack.UI.LoginUI;
-import com.JavaStack.service.RecordService;
-
 
 public class JavaStackMain {
     public static void main(String[] args) {
