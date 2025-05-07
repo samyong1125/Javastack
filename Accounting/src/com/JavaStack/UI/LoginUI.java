@@ -31,11 +31,9 @@ public class LoginUI {
             System.out.println("이메일과 비밀번호를 입력하세요. (남은 시도: " + (maxAttempts - attempts) + ")");
 
             System.out.print("이메일: ");
-            //String email = scanner.nextLine();
-            String email = "hong@test.com";
+            String email = scanner.nextLine();
             System.out.print("비밀번호: ");
-            //String password = scanner.nextLine();
-            String password ="pass123";
+            String password = scanner.nextLine();
 
             loggedInMember = memberService.login(email, password);
 
