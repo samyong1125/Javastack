@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 import com.JavaStack.DB.DbManager;
+import com.JavaStack.service.BudgetChecker;
 
 public class RecordService {
 	DbManager db = DbManager.getInst();
@@ -190,6 +191,19 @@ public class RecordService {
 
 		// INSERT 실행
 		insertRecord(memberId, paymentId, categoryId, amount, recordDetails, today, memo);
+		
+		// 지출 카테고리인 경우에만 예산 체크 (지출 카테고리는 category 테이블의 category_type이 'EX'인 경우)
+		if (isCategoryExpense(categoryId)) {
+			// 예산 상태 확인
+			BudgetChecker budgetChecker = new BudgetService();
+			int budgetBalance = budgetChecker.checkBudgetBalance(memberId);
+			
+			if (budgetChecker.isBudgetExceeded(memberId)) {
+				System.out.println(" 경고: " + budgetChecker.formatBudgetStatus(budgetBalance));
+			} else {
+				System.out.println(" " + budgetChecker.formatBudgetStatus(budgetBalance));
+			}
+		}
 	}
 
 	// 보조 메서드: 이름으로 ID 조회
@@ -340,6 +354,21 @@ public class RecordService {
 	    java.sql.Date today = new java.sql.Date(System.currentTimeMillis());
 
 	    updateRecordAllFields(recordId, memberId, paymentId, categoryId, amount, details, today, memo);
+	}
+
+	// 카테고리가 지출 카테고리인지 확인
+	private boolean isCategoryExpense(int categoryId) {
+		String sql = "SELECT category_type FROM category WHERE category_id = ?";
+		try (PreparedStatement pstmt = db.con.prepareStatement(sql)) {
+			pstmt.setInt(1, categoryId);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return "EX".equals(rs.getString("category_type"));
+			}
+		} catch (SQLException e) {
+			db.showErr(e);
+		}
+		return false;
 	}
 
 }
