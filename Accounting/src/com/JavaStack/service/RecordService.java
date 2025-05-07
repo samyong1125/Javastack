@@ -146,39 +146,88 @@ public class RecordService {
 		}
 	}
 
-	public void insertRecordWithNames(int memberId, Scanner scanner // 사용자 입력을 위한 Scanner 전달
-	) {
+//	public void insertRecordWithNames(int memberId, Scanner scanner // 사용자 입력을 위한 Scanner 전달
+//	) {
+//		int paymentId = -1;
+//		int categoryId = -1;
+//
+//		// 1. 유효한 payment_name 입력 받을 때까지 반복
+//		while (paymentId == -1) {
+//			System.out.print("결제수단 이름 입력 (예: 카드, 이체, 현금, 자동이체): ");
+//			String paymentName = scanner.nextLine().trim();
+//
+//			paymentId = getPaymentIdByName(paymentName);
+//			if (paymentId == -1) {
+//				System.out.println("❌ 존재하지 않는 결제수단입니다. 다시 입력해주세요.");
+//			}
+//			
+//		}
+//		
+//		// 2. 유효한 category_name 입력 받을 때까지 반복
+//		while (categoryId == -1) {
+////			scanner.close(); // 스캐너 종료
+//			System.out.print("카테고리 이름 입력 (예: 월급, 식료품비 등): ");
+//			String categoryName = scanner.nextLine().trim();
+//
+//			categoryId = getCategoryIdByName(categoryName);
+//			if (categoryId == -1) {
+//				System.out.println("❌ 존재하지 않는 카테고리입니다. 다시 입력해주세요.");
+//			}
+//		}
+//
+//		// 3. 나머지 값 입력
+//		System.out.print("금액 입력: ");
+//		int amount = scanner.nextInt();
+//		scanner.nextLine();
+//
+//		System.out.print("상세 내용 입력: ");
+//		String recordDetails = scanner.nextLine();
+//
+//		System.out.print("메모 입력 (선택): ");
+//		String memo = scanner.nextLine();
+//
+//		java.sql.Date today = new java.sql.Date(System.currentTimeMillis());
+//
+//		// INSERT 실행
+//		insertRecord(memberId, paymentId, categoryId, amount, recordDetails, today, memo);
+//	}
+
+	public void insertRecordWithNames(int memberId, Scanner scanner) {
 		int paymentId = -1;
 		int categoryId = -1;
 
-		// 1. 유효한 payment_name 입력 받을 때까지 반복
 		while (paymentId == -1) {
 			System.out.print("결제수단 이름 입력 (예: 카드, 이체, 현금, 자동이체): ");
 			String paymentName = scanner.nextLine().trim();
-
 			paymentId = getPaymentIdByName(paymentName);
 			if (paymentId == -1) {
-				System.out.println("❌ 존재하지 않는 결제수단입니다. 다시 입력해주세요.");
+				System.err.println("❌ 존재하지 않는 결제수단입니다. 다시 입력해주세요.");
 			}
-			
 		}
-		
-		// 2. 유효한 category_name 입력 받을 때까지 반복
+
 		while (categoryId == -1) {
-//			scanner.close(); // 스캐너 종료
 			System.out.print("카테고리 이름 입력 (예: 월급, 식료품비 등): ");
 			String categoryName = scanner.nextLine().trim();
-
 			categoryId = getCategoryIdByName(categoryName);
 			if (categoryId == -1) {
-				System.out.println("❌ 존재하지 않는 카테고리입니다. 다시 입력해주세요.");
+				System.err.println("❌ 존재하지 않는 카테고리입니다. 다시 입력해주세요.");
 			}
 		}
 
-		// 3. 나머지 값 입력
-		System.out.print("금액 입력: ");
-		int amount = scanner.nextInt();
-		scanner.nextLine();
+		int amount = 0;
+		while (true) {
+			System.out.print("금액 입력: ");
+			try {
+				amount = Integer.parseInt(scanner.nextLine());
+				if (amount < 0) {
+					System.err.println("❌ 금액은 음수일 수 없습니다.");
+				} else {
+					break;
+				}
+			} catch (NumberFormatException e) {
+				System.err.println("❌ 숫자를 입력해야 합니다.");
+			}
+		}
 
 		System.out.print("상세 내용 입력: ");
 		String recordDetails = scanner.nextLine();
@@ -188,7 +237,6 @@ public class RecordService {
 
 		java.sql.Date today = new java.sql.Date(System.currentTimeMillis());
 
-		// INSERT 실행
 		insertRecord(memberId, paymentId, categoryId, amount, recordDetails, today, memo);
 	}
 
@@ -278,20 +326,38 @@ public class RecordService {
 		}
 	}
 
+//	public void deleteRecordWithValidation(Scanner scanner) {
+//	        System.out.print("삭제할 record_id 입력: ");
+//	        int recordId = scanner.nextInt();
+//	        scanner.nextLine();
+//
+//	        if (!recordExists(recordId)) {
+//	            System.out.println("❌ 해당 ID의 레코드가 존재하지 않습니다.");
+//	            return;
+//	        }
+//
+//	        deleteRecord(recordId);
+//	       
+//	     
+//	    }
 	public void deleteRecordWithValidation(Scanner scanner) {
-	        System.out.print("삭제할 record_id 입력: ");
-	        int recordId = scanner.nextInt();
-	        scanner.nextLine();
+		System.out.print("삭제할 record_id 입력: ");
+		int recordId;
+		try {
+			recordId = Integer.parseInt(scanner.nextLine());
+		} catch (NumberFormatException e) {
+			System.err.println("❌ 숫자로 된 record_id를 입력해야 합니다.");
+			return;
+		}
 
-	        if (!recordExists(recordId)) {
-	            System.out.println("❌ 해당 ID의 레코드가 존재하지 않습니다.");
-	            return;
-	        }
+		if (!recordExists(recordId)) {
+			System.err.println("❌ 해당 ID의 레코드가 존재하지 않습니다.");
+			return;
+		}
 
-	        deleteRecord(recordId);
-	       
-	     
-	    }
+		deleteRecord(recordId);
+	}
+
 
 	private boolean recordExists(int recordId) {
 		String sql = "SELECT COUNT(*) FROM record WHERE record_id = ?";
