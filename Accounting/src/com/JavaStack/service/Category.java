@@ -108,6 +108,7 @@ public class Category {
     }
     
 	public void deleteCategoryName(Scanner sc) {
+		showCategory();
 		sc.nextLine();
 		System.out.print("삭제할 카테고리 이름: ");
 		String CategoryName = sc.nextLine();
@@ -115,11 +116,12 @@ public class Category {
 	}
 	
 	public void updateCategoryName(Scanner sc) {
+		showCategory(); 
 		sc.nextLine();
 		System.out.print("수정할 카테고리 이름: ");
 		String OldName = sc.nextLine();
         System.out.print("새로운 카테고리 이름: ");
-        String NewName = sc.nextLine();
+        String NewName = sc.nextLine();		
         System.out.print("새로운 카테고리 타입(IN or EX): ");
         String CategoryType = sc.nextLine();
         
