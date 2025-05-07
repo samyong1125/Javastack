@@ -91,15 +91,29 @@ public class RecordService {
 
 	// 4. 데이터 보기 (Select)
 	public void showRecords() {
-		String sql = "SELECT * FROM record ORDER BY reg_date DESC";
+		String sql = """
+				SELECT 
+				r.record_id,
+				r.member_id,
+				p.payment_name,
+				c.category_name,
+				r.amount,
+				r.record_details,
+				r.reg_date,
+				r.memo_content
+			FROM record r
+			JOIN payment p ON r.payment_id = p.payment_id
+			JOIN category c ON r.category_id = c.category_id
+			ORDER BY r.reg_date DESC
+			""";
 		try (Statement st = db.con.createStatement(); ResultSet rs = st.executeQuery(sql)) {
 			int i = 1;
 			while (rs.next()) {
 				System.out.println("번호: " + (i++));
 				System.out.println("Record ID: " + rs.getInt("record_id"));
 				System.out.println("회원 ID: " + rs.getInt("member_id"));
-				System.out.println("결제수단 ID: " + rs.getInt("payment_id"));
-				System.out.println("카테고리 ID: " + rs.getInt("category_id"));
+				System.out.println("결제수단 이름: " + rs.getString("payment_name"));
+				System.out.println("카테고리 이름: " + rs.getString("category_name"));
 				System.out.println("금액: " + rs.getInt("amount"));
 				System.out.println("세부사항: " + rs.getString("record_details"));
 				System.out.println("등록일: " + rs.getDate("reg_date"));
