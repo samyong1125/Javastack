@@ -64,10 +64,12 @@ public class RecordUI {
                     break;
 
                 case 2:
+                recordService.showRecords();
                     recordService.deleteRecordWithValidation(sc);
                     break;
 
                 case 3:
+                recordService.showRecords();
                     System.out.print("수정할 record_id 입력: ");
                     int recordId = sc.nextInt();
                     sc.nextLine();
