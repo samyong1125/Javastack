@@ -29,4 +29,38 @@ public interface BudgetChecker {
      * @return 포맷팅된 예산 상태 메시지
      */
     String formatBudgetStatus(int balance);
+    
+    /**
+     * 사용자의 예산이 존재하는지 확인합니다.
+     * 
+     * @param memberId 회원 ID
+     * @return 예산 존재 여부
+     */
+    boolean budgetExists(int memberId);
+    
+    /**
+     * 새로운 예산을 설정합니다.
+     * 
+     * @param memberId 회원 ID
+     * @param amount 예산 금액
+     * @return 성공 여부
+     */
+    boolean createBudget(int memberId, int amount);
+    
+    /**
+     * 기존 예산을 업데이트합니다.
+     * 
+     * @param memberId 회원 ID
+     * @param amount 새 예산 금액
+     * @return 성공 여부
+     */
+    boolean updateBudget(int memberId, int amount);
+    
+    /**
+     * 현재 설정된 예산 금액을 조회합니다.
+     * 
+     * @param memberId 회원 ID
+     * @return 예산 금액
+     */
+    int getCurrentBudgetAmount(int memberId);
 } 
