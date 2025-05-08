@@ -220,7 +220,7 @@ public class RecordService {
 		}
 
 		while (categoryId == -1) {
-			System.out.print("카테고리 이름 입력 (예: 월급, 식료품비 등): ");
+			System.out.print("카테고리 이름 입력 (예: 월급, 성과급, 블로그광고수입, 중고판매수입, 주식배당금, 커피구입, 월세납부, 휴대폰요금, 병원진료비, 식료품비 등): ");
 			String categoryName = scanner.nextLine().trim();
 			categoryId = getCategoryIdByName(categoryName);
 			if (categoryId == -1) {
