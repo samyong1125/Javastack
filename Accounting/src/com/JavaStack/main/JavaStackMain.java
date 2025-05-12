@@ -13,7 +13,6 @@ public class JavaStackMain {
             LoginUI loginUI = new LoginUI();
             BudgetChecker budgetChecker = new BudgetService();
             boolean loginSuccess = loginUI.showLoginScreen();
-            boolean check = budgetChecker.budgetExists(loginUI.getLoggedInMember().getMemberId());
 
             if (!loginSuccess) {
                 System.out.println("\n로그인 실패. 프로그램 종료.");
@@ -24,7 +23,7 @@ public class JavaStackMain {
 
             // 로그인 시 예산 상태 확인
             int budgetBalance = budgetChecker.checkBudgetBalance(loginUI.getLoggedInMember().getMemberId());
-            if (check) {
+            if (budgetChecker.budgetExists(loginUI.getLoggedInMember().getMemberId())) {
                 if (budgetChecker.isBudgetExceeded(loginUI.getLoggedInMember().getMemberId())) {
                     System.out.println(" 경고: " + budgetChecker.formatBudgetStatus(budgetBalance));
                 } else {
@@ -51,7 +50,7 @@ public class JavaStackMain {
                         RecordUI.recordUI(loginUI.scanner, loginUI.getLoggedInMember());
                         // 레코드 작업 후 예산 상태 확인
 
-                        if (check) {
+                        if (budgetChecker.budgetExists(loginUI.getLoggedInMember().getMemberId())) {
                             checkAndDisplayBudgetStatus(budgetChecker, loginUI.getLoggedInMember().getMemberId());
                         } else {
                             System.out.println("설정된 예산이 없습니다.");
@@ -59,7 +58,7 @@ public class JavaStackMain {
                         break;
                     case 2:
                         RecordUI.CateUI(loginUI.scanner, loginUI.getLoggedInMember());
-                        if (check) {
+                        if (budgetChecker.budgetExists(loginUI.getLoggedInMember().getMemberId())) {
                             checkAndDisplayBudgetStatus(budgetChecker, loginUI.getLoggedInMember().getMemberId());
                         } else {
                             System.out.println("설정된 예산이 없습니다.");
@@ -67,7 +66,7 @@ public class JavaStackMain {
                         break;
                     case 3:
                         RecordUI.StaUI(loginUI.scanner, loginUI.getLoggedInMember());
-                        if (check) {
+                        if (budgetChecker.budgetExists(loginUI.getLoggedInMember().getMemberId())) {
                             checkAndDisplayBudgetStatus(budgetChecker, loginUI.getLoggedInMember().getMemberId());
                         } else {
                             System.out.println("설정된 예산이 없습니다.");
@@ -76,7 +75,7 @@ public class JavaStackMain {
                     case 4:
                         // 예산 관리 메뉴
                         showBudgetManagement(budgetChecker, loginUI);
-                        if (check) {
+                        if (budgetChecker.budgetExists(loginUI.getLoggedInMember().getMemberId())) {
                             checkAndDisplayBudgetStatus(budgetChecker, loginUI.getLoggedInMember().getMemberId());
                         } else {
                             System.out.println("설정된 예산이 없습니다.");
