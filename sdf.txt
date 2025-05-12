@@ -1,0 +1,6 @@
+-- auto-generated definition
+create sequence SEQ_BUDGET_ID
+    maxvalue 9999
+    nocache
+/
+
